@@ -21,15 +21,15 @@ function Todos() {
     <ul className='w-[60%] flex flex-col gap-y-3 my-5'>
         {
             filterData.map((todo) => {
-                return <li key={todo.id} className='border bg-blue-700 px-5 py-1 flex rounded-lg '>
+                return <li key={todo.id} className='border bg-gray-200 px-5 p-2 flex rounded-lg '>
                     <div className='inline-block w-[100%]'>
                     <input type="checkbox" id={`todo-${todo.id}`} checked={todo.completed} onChange={()=> toggleTodoAsCompleted(todo.id)} />
 
-                    <label className='text-white mx-2 capitalize' htmlFor={`todo-${todo.id}`}>{todo.task}</label>
+                    <label className='text-blue-900 mx-2 capitalize' htmlFor={`todo-${todo.id}`}>{todo.task}</label>
                     </div>
                     {
                         todo.completed &&(
-                            <button className='text-purple-600 ml-5 bg-white px-2 rounded-sm' type="button" onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
+                            <button className='text-white ml-5 bg-red-500 px-2 rounded-sm' type="button" onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
                         )
                     }
                 </li>
