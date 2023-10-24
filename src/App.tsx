@@ -1,6 +1,8 @@
 function App() {
   return (
-    <div className="text-red-600 bg-gray-900 text-center">App</div>
+    <div className="min-h-[100vh] max-h-[100%] bg-blue-950 flex justify-center items-center">
+      <h1 className="text-white uppercase font-serif">Todo List</h1>
+    </div>
   )
 }
 
