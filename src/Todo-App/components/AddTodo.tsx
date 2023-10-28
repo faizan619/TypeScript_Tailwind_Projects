@@ -7,10 +7,12 @@ function AddTodo() {
     const [todo,setTodo] = useState("")
     const {handleAddToDo} = useTodos();
 
-    const handleFormSubmit = (e:any) => {
+    const handleFormSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        handleAddToDo(todo);
-        setTodo("")
+        if (todo.trim() !== "") {
+          handleAddToDo(todo);
+          setTodo("");
+      }
     }
 
   return (

@@ -1,21 +1,39 @@
 import { useSearchParams } from 'react-router-dom'
 import { useTodos } from '../store/todos'
+import toast from 'react-hot-toast';
+import { useEffect,useState } from 'react';
+
 
 function Todos() {
 
     const {todos,toggleTodoAsCompleted,handleDeleteTodo} = useTodos();
-
+    const [filterData, setFilterData] = useState(todos);
     const [searchParams] = useSearchParams();
     let todosData = searchParams.get("todos");
 
-    let filterData = todos;
+    useEffect(() => {
+        if (todosData === "active") {
+            setFilterData(todos.filter((task) => !task.completed));
+                toast.success("Active Task Filtered")
+        } else if (todosData === "completed") {
+            setFilterData(todos.filter((task) => task.completed));
+            toast.success("Complete Task Filtered")
+        } else {
+            setFilterData(todos);
+            toast.success("Task Filtered")
+        }
+    }, [todos, todosData]);
 
-    if(todosData === "active"){
-        filterData = todos.filter((task)=> task.completed===false);
-    }
-    else if(todosData === "completed"){
-        filterData = todos.filter((task)=> task.completed===true);
-    }
+    // let filterData = todos;
+
+    // if(todosData === "active"){
+    //     filterData = todos.filter((task)=> task.completed===false);
+    // }
+    // else if(todosData === "completed"){
+    //     filterData = todos.filter((task)=> task.completed===true);
+    //     toast.success("Complete Task Filtered")
+    // }
+
 
   return (
     <ul className='w-[95%] flex flex-col gap-y-3 my-5 sm:w-[70%] lg:w-[60%]'>
