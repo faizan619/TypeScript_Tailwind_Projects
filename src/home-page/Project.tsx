@@ -1,11 +1,11 @@
 
 
-function Project() {
+function Project(props:any) {
   return (
-        <div className="border p-2 flex flex-col  ">
-            <h1 className="font-serif text-xl tracking-wider mb-2">Project Title</h1>
-            <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--51RtiLTV--/c_imagga_scale,f_auto,fl_progressive,h_1080,q_auto,w_1080/https://dev-to-uploads.s3.amazonaws.com/i/in7r7auvg6xujj5fm1gm.png" alt="image" className="h-32 mb-2 object-cover border " />
-            <button type="button" className="border py-1 px-5 hover:bg-gray-900 rounded-lg">Preview</button>
+        <div className="border hover:scale-105 transition-all duration-500 hover:shadow-[] p-2 w-72 h-96 flex flex-col rounded-md ">
+            <h1 className="font-serif text-xl tracking-wider mb-2">{props.title}</h1>
+            <img src={props.img}  alt="image" className="h-[100%] rounded-lg mb-2 object-cover" />
+            <a href={props.link}><button type="button" className="border-2 py-1 px-5 rounded-lg hover:bg-[#faae17] hover:text-[#1c1e29]">Preview</button></a>
         </div>
   )
 }
