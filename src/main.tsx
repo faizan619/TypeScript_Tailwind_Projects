@@ -9,14 +9,7 @@ import {Toaster} from 'react-hot-toast'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Toaster
-          position='top-center'
-          toastOptions={{
-            success:{
-              theme:{
-                primary:'#4aed88'
-              }
-            }
-          }}
+          position='bottom-center'
         />
     <BrowserRouter>
       <Routes>
