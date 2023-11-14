@@ -12,6 +12,10 @@ function App() {
           img="https://github.com/faizan619/TypeScript_Tailwind_Projects/blob/main/src/assets/todo.PNG?raw=true"
           link="/todo"
         />
+        <Project
+        title="popover steps"
+        link="/driver"
+        />
       </div>
       </div>
     </div>
