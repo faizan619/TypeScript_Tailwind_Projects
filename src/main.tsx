@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <Routes>
         <Route path='/todo' element={<TodoApp/>} />
-        <Route path='/' element={<HomePage/>}/>
+        <Route path='/' element={<HomePage/>}/> 
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
