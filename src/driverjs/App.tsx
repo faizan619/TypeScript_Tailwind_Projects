@@ -32,7 +32,7 @@ const mainContent =<div>
     </div>
 
 
-function App() {
+function DriverApp() {
   // Check if the tour has been completed
   const tourCompleted = localStorage.getItem('tourCompleted');
 
@@ -105,4 +105,4 @@ function App() {
   );
 }
 
-export default App;
+export default DriverApp;
